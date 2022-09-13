@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: aplicacion
+  namespace: pruebita
+spec:
+  replicas: 0
+  selector:
+    matchLabels:
+      app: prueba
+      environment: test
+  template:
+    metadata:
+      labels:
+        app: prueba
+        environment: test
+    spec:
+      containers:
+        - name: app-prueba
+          image: 'aplicacion:lastest'
+          ports:
+            - containerPort: 80
+
+
+      

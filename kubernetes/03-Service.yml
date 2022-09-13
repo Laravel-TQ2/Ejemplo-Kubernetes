@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: http-prueba
+  namespace: pruebita
+spec:
+  type: NodePort
+  selector:
+    app: prueba
+    environment: test
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 80
+      nodePort: 30001
